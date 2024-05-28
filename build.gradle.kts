@@ -2,7 +2,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.9.22"
+    kotlin("plugin.serialization") version "1.6.0"
     jacoco
+
 }
 
 group = "ar.edu.unsam.algo2"
@@ -20,6 +22,8 @@ dependencies {
     testImplementation("io.mockk:mockk:${mockkVersion}")
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
 }
 
 tasks.withType<KotlinCompile> {
